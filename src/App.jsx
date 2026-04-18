@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
-
-const PROFILE_IMAGE = "data:image/jpeg;base64,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";
+import profileImage from "./assets/profile.jpg";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -144,12 +143,23 @@ export default function App() {
 
             <div className="flex flex-col gap-3 md:items-end">
               <nav className="flex flex-wrap gap-2 text-sm">
-                <a href="#about" className="rounded-full px-4 py-2 transition hover:bg-white/10">About</a>
-                <a href="#achievements" className="rounded-full px-4 py-2 transition hover:bg-white/10">Achievements</a>
-                <a href="#skills" className="rounded-full px-4 py-2 transition hover:bg-white/10">Skills</a>
-                <a href="#socials" className="rounded-full px-4 py-2 transition hover:bg-white/10">Socials</a>
-                <a href="#contact" className="rounded-full px-4 py-2 transition hover:bg-white/10">Contact</a>
+                <a href="#about" className="rounded-full px-4 py-2 transition hover:bg-white/10">
+                  About
+                </a>
+                <a href="#achievements" className="rounded-full px-4 py-2 transition hover:bg-white/10">
+                  Achievements
+                </a>
+                <a href="#skills" className="rounded-full px-4 py-2 transition hover:bg-white/10">
+                  Skills
+                </a>
+                <a href="#socials" className="rounded-full px-4 py-2 transition hover:bg-white/10">
+                  Socials
+                </a>
+                <a href="#contact" className="rounded-full px-4 py-2 transition hover:bg-white/10">
+                  Contact
+                </a>
               </nav>
+
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className={`rounded-full border px-4 py-2 text-sm transition ${theme.chip}`}
@@ -167,18 +177,29 @@ export default function App() {
             <span className={`inline-flex rounded-full border px-4 py-1 text-sm ${theme.chip}`}>
               Minimal + Slightly Technical Portfolio
             </span>
+
             <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
               Designing ideas with precision, leadership, and an engineer’s mindset.
             </h2>
+
             <p className={`mt-5 max-w-2xl text-base leading-7 md:text-lg ${theme.textSoft}`}>
-              I am Hridam Roshan Paul, a Mechanical Engineering undergraduate from KUET with a strong passion for CAD design, simulation, and research. My work centers on SolidWorks modeling, growing ANSYS expertise, and long-term interests in lightweight design, aerodynamics, and research-driven engineering.
+              I am Hridam Roshan Paul, a Mechanical Engineering undergraduate from KUET with a strong passion
+              for CAD design, simulation, and research. My work centers on SolidWorks modeling, growing ANSYS
+              expertise, and long-term interests in lightweight design, aerodynamics, and research-driven
+              engineering.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#achievements" className={`rounded-2xl px-5 py-3 font-medium shadow-lg transition hover:scale-[1.02] ${theme.buttonPrimary}`}>
+              <a
+                href="#achievements"
+                className={`rounded-2xl px-5 py-3 font-medium shadow-lg transition hover:scale-[1.02] ${theme.buttonPrimary}`}
+              >
                 Explore Achievements
               </a>
-              <a href="#socials" className={`rounded-2xl border px-5 py-3 font-medium transition ${theme.buttonSecondary}`}>
+              <a
+                href="#socials"
+                className={`rounded-2xl border px-5 py-3 font-medium transition ${theme.buttonSecondary}`}
+              >
                 Social Links
               </a>
             </div>
@@ -187,12 +208,14 @@ export default function App() {
           <div className={`fade-up rounded-[2rem] border p-6 shadow-2xl backdrop-blur-sm ${theme.panel}`}>
             <div className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-orange-400/20 via-yellow-300/10 to-black/10 p-6">
               <div className="mx-auto h-36 w-36 overflow-hidden rounded-full border border-white/20 bg-black/80 shadow-xl">
-                <img src={PROFILE_IMAGE} alt="Hridam Roshan Paul" className="h-full w-full object-cover" />
+                <img src={profileImage} alt="Hridam Roshan Paul" className="h-full w-full object-cover" />
               </div>
+
               <h3 className="mt-5 text-center text-2xl font-semibold">Hridam Roshan Paul</h3>
               <p className={`mt-2 text-center ${theme.textSoft}`}>
                 CEO of CADers • KUET ME-2k21 • Future Researcher
               </p>
+
               <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
                 <div className={`rounded-2xl border p-4 ${theme.panelSoft}`}>
                   <p className={theme.textMuted}>Current Focus</p>
@@ -221,9 +244,14 @@ export default function App() {
             <p className={`text-sm uppercase tracking-[0.25em] ${theme.accent}`}>About Me</p>
             <h3 className="mt-3 text-3xl font-semibold">Engineering creativity backed by technical ambition.</h3>
             <p className={`mt-4 leading-7 ${theme.textSoft}`}>
-              As a Mechanical Engineering undergraduate at KUET, I am building a path centered on technical design, engineering analysis, and research. I enjoy transforming concepts into practical CAD models, exploring simulation workflows, and leading technical communities that help others grow. Through CADers, workshops, competitions, and seminars, I aim to contribute to a stronger engineering culture while preparing for advanced research in the future.
+              As a Mechanical Engineering undergraduate at KUET, I am building a path centered on technical
+              design, engineering analysis, and research. I enjoy transforming concepts into practical CAD
+              models, exploring simulation workflows, and leading technical communities that help others grow.
+              Through CADers, workshops, competitions, and seminars, I aim to contribute to a stronger
+              engineering culture while preparing for advanced research in the future.
             </p>
           </div>
+
           <div className={`fade-up rounded-[2rem] border p-8 ${theme.panel}`}>
             <p className={`text-sm uppercase tracking-[0.25em] ${theme.accentSoft}`}>Quick Facts</p>
             <ul className={`mt-4 space-y-3 ${theme.textSoft}`}>
@@ -289,6 +317,7 @@ export default function App() {
             <p className={`text-sm uppercase tracking-[0.25em] ${theme.accent}`}>Find Me Online</p>
             <h3 className="mt-2 text-3xl font-semibold">Professional presence across platforms.</h3>
           </div>
+
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {socials.map((social, index) => (
               <a
@@ -300,7 +329,9 @@ export default function App() {
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <p className="text-lg font-medium">{social.name}</p>
-                <p className={`mt-2 break-all text-sm ${theme.textMuted}`}>{social.url.replace("mailto:", "")}</p>
+                <p className={`mt-2 break-all text-sm ${theme.textMuted}`}>
+                  {social.url.replace("mailto:", "")}
+                </p>
               </a>
             ))}
           </div>
@@ -311,13 +342,23 @@ export default function App() {
             <p className={`text-sm uppercase tracking-[0.25em] ${theme.accent}`}>Contact</p>
             <h3 className="mt-2 text-3xl font-semibold">Let’s build, design, and explore ideas together.</h3>
             <p className={`mt-4 max-w-2xl leading-7 ${theme.textSoft}`}>
-              I am always interested in meaningful conversations around CAD design, technical learning, engineering leadership, and research-oriented collaboration.
+              I am always interested in meaningful conversations around CAD design, technical learning,
+              engineering leadership, and research-oriented collaboration.
             </p>
+
             <div className="mt-6 flex flex-wrap gap-4">
-              <a href="mailto:hridampaul2004@gmail.com" className={`rounded-2xl px-5 py-3 font-medium ${theme.buttonPrimary}`}>
+              <a
+                href="mailto:hridampaul2004@gmail.com"
+                className={`rounded-2xl px-5 py-3 font-medium ${theme.buttonPrimary}`}
+              >
                 Email Me
               </a>
-              <a href="https://www.linkedin.com/in/hridam-roshan-paul-58a92724b/" target="_blank" rel="noreferrer" className={`rounded-2xl border px-5 py-3 font-medium transition ${theme.buttonSecondary}`}>
+              <a
+                href="https://www.linkedin.com/in/hridam-roshan-paul-58a92724b/"
+                target="_blank"
+                rel="noreferrer"
+                className={`rounded-2xl border px-5 py-3 font-medium transition ${theme.buttonSecondary}`}
+              >
                 Connect on LinkedIn
               </a>
             </div>
@@ -327,5 +368,3 @@ export default function App() {
     </div>
   );
 }
-
-
