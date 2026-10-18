@@ -98,14 +98,14 @@ export const publications = [
   },
   {
     type: 'Book chapter',
-    status: 'Under review · expected March 2027',
+    status: 'Revision submitted · book listed for March 2027',
     title: 'Additive Manufacturing and 3D Printing of Sandwich Structures (Ch. 11)',
     authors: 'M.A. Chowdhury, R. Ahammad, H.R. Paul, S. Roy, N.U.H. Durjoy, A.D. Sarker, M.M. Rahman',
     venue: 'Sandwich Structured Composites: Materials, Design and Applications, Elsevier',
   },
   {
     type: 'Book chapter',
-    status: 'Under review · expected March 2027',
+    status: 'Revision submitted · book listed for March 2027',
     title: 'Sandwich Composites in Automotive, Rail, Aerospace, Unmanned Air Vehicle, and Marine Applications (Ch. 29)',
     authors: 'M.A. Chowdhury, R. Ahammad, H.R. Paul, S. Roy, N.U.H. Durjoy, A.D. Sarker, M.M. Rahman',
     venue: 'Sandwich Structured Composites: Materials, Design and Applications, Elsevier',
