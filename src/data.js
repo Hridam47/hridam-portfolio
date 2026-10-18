@@ -87,7 +87,7 @@ export const publications = [
     status: 'Accepted',
     title: 'Experimental and Numerical Investigation of Flexural Energy Absorption in Octopus Suction-Cup-Inspired FDM-Printed Sandwich Structures',
     authors: 'S. Baidya, S. Ahmed, T. Ahmed, H.R. Paul, M.A. Hasib, A.M. Billah, A.K. Debnath',
-    venue: 'Materials Today Communications',
+    venue: 'Materials Today Communications, Elsevier',
   },
   {
     type: 'Journal article',
