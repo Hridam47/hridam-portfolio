@@ -55,7 +55,7 @@ function Interests() {
 function Research() {
   return (
     <section className="wrap section" id="research">
-      <SectionHead eyebrow="Research" title="Current work" lead="Three projects connected by one question: how do we control composite behaviour by controlling what goes where?" />
+      <SectionHead eyebrow="Research" title="Current work" lead="Two projects connected by one question: how do we control composite behaviour by controlling what goes where?" />
       <div className="stack">
         {research.map((r, idx) => (
           <article className="card project" key={r.title}>
@@ -133,6 +133,7 @@ function Publications() {
             <h3>{p.title}</h3>
             <p className="muted"><Authors text={p.authors} /></p>
             <p className="venue">{p.venue}</p>
+            {p.link && <a className="pub-link" href={p.link} target="_blank" rel="noreferrer">View paper ↗</a>}
           </article>
         ))}
       </div>
