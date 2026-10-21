@@ -84,7 +84,6 @@ export const publications = [
     status: 'In preparation',
     title: 'Synergistic Effects of TiO₂/SiC Hybrid Ceramic Fillers on the Mechanical, Morphological and Moisture Resistance Behavior of Jute/Glass Fiber Epoxy Composites',
     authors: 'H.R. Paul, M.J. Rahman, S.B. Aesop, S.M.H. Aronno, M.A. Hasib, A.M. Billah, A.K. Debnath',
-    venue: 'First-author manuscript',
   },
   {
     type: 'Book chapter',
