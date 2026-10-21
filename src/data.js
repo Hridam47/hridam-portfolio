@@ -20,7 +20,7 @@ export const hero = {
 }
 
 export const stats = [
-  { n: '4', l: 'Papers & book chapters (in the pipeline)' },
+  { n: '4', l: 'Papers & book chapters' },
   { n: '3', l: 'National CAD contest podiums' },
   { n: 'May 2027', l: 'B.Sc. expected' },
   { n: '2×', l: 'KUET Technical Scholarship' },
@@ -46,18 +46,6 @@ export const research = [
     meta: ['PLA / graphite', 'FFF', 'FGAM', 'Thermal & mechanical'],
     status: 'In progress',
     supervisor: 'Supervisor: Dr. Md. Shariful Islam, Dept. of Mechanical Engineering, KUET',
-  },
-  {
-    tag: 'Journal article · accepted',
-    title: 'Octopus suction-cup-inspired FDM-printed sandwich structures: flexural energy absorption',
-    summary:
-      'Experimental and numerical study of octopus-sucker-inspired cellular cores for FDM-printed sandwich panels, comparing three core geometries (AV1–AV3) in flexural loading with a focus on energy absorption.',
-    points: [
-      'Flexural testing combined with finite element analysis.',
-      'Accepted in Materials Today Communications.',
-    ],
-    meta: ['Bio-inspired cores', 'FDM', 'Flexure', 'FEA'],
-    status: 'Accepted',
   },
   {
     tag: 'Journal article · first author',
